@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="bg-success text-white py-3 shadow-sm fixed-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="h4 mb-0 animate_animated animate_fadeInLeft">Wina Agustina</h1>
+        <button class="mobile-menu-btn animate_animated animate_fadeInRight"></button>
+        <nav>
+          <ul class="list-unstyled d-flex gap-4 mb-0 animate_animated animate_fadeInRight">
+            <li><a href="index.html" class="text-white text-decoration-none hover-underline">Home</a></li>
+            <li><a href="profil.html" class="text-white text-decoration-none hover-underline">Profil</a></li>
+            <li><a href="gallery.html" class="text-white text-decoration-none hover-underline">Gallery</a></li>
+            <li><a href="formulir.html" class="text-white text-decoration-none hover-underline">Pendaftaran</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu">
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-decoration-none">Home</a></li>
+            <li><a href="profil.html" class="text-decoration-none">Profil</a></li>
+            <li><a href="gallery.html" class="text-decoration-none">Gallery</a></li>
+            <li><a href="formulir.html" class="text-decoration-none">Pendaftaran</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Gallery Section -->
+  <section class="container my-5 py-5">
+    <h2 class="text-center text-success mb-4 animate_animated animate_fadeInDown">Gallery</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4 animate_animated animate_fadeInLeft">
+        <div class="card shadow-lg">
+          <img src="image/gambar2.jpeg" alt="Foto 1" class="card-img-top rounded">
+          <div class="card-body">
+            <p class="card-text text-muted">Acara Nikahan Sila.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 animate_animated animate_fadeInUp">
+        <div class="card shadow-lg">
+          <img src="image/gambar3.jpeg" alt="Foto 2" class="card-img-top rounded">
+          <div class="card-body">
+            <p class="card-text text-muted">Hari Raya Tahun 2023.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 animate_animated animate_fadeInRight">
+        <div class="card shadow-lg">
+          <img src="image/gambar8.jpeg" alt="Foto 3" class="card-img-top rounded">
+          <div class="card-body">
+            <p class="card-text text-muted">Ngampus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4 animate_animated animate_fadeInLeft">
+        <div class="card shadow-lg">
+          <video controls class="w-100 rounded">
+            <source src="image/video3.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+          </video>
+          <div class="card-body">
+            <p class="card-text text-muted">Video Permisahan sama anak Malang.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      menuBtn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('show');
+        
+        // Tambahkan efek glow saat menu aktif
+        if (mobileMenu.classList.contains('show')) {
+          mobileMenu.style.boxShadow = '0 0 20px rgba(0, 242, 255, 0.5)';
+        } else {
+          mobileMenu.style.boxShadow = 'var(--neon-glow)';
+        }
+      });
+      
+      // Tutup menu saat mengklik item
+      const menuItems = document.querySelectorAll('.mobile-menu a');
+      menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+          menuBtn.classList.remove('active');
+          mobileMenu.classList.remove('show');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

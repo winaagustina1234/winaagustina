@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="bg-success text-white py-3 shadow-sm fixed-top">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="h4 mb-0 animate_animated animate_fadeInLeft">Wina Agustina</h1>
+        <button class="mobile-menu-btn animate_animated animate_fadeInRight"></button>
+        <nav>
+          <ul class="list-unstyled d-flex gap-4 mb-0 animate_animated animate_fadeInRight">
+            <li><a href="index.html" class="text-white text-decoration-none hover-underline">Home</a></li>
+            <li><a href="profil.html" class="text-white text-decoration-none hover-underline">Profil</a></li>
+            <li><a href="gallery.html" class="text-white text-decoration-none hover-underline">Gallery</a></li>
+            <li><a href="formulir.html" class="text-white text-decoration-none hover-underline">Pendaftaran</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu">
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-decoration-none">Home</a></li>
+            <li><a href="profil.html" class="text-decoration-none">Profil</a></li>
+            <li><a href="gallery.html" class="text-decoration-none">Gallery</a></li>
+            <li><a href="formulir.html" class="text-decoration-none">Pendaftaran</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Bagian Foto dan Biodata -->
+  <div class="profile">
+    <img src="image/gambar1.jpeg" alt="Foto Profil"
+      style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 15px;">
+    <h2>Wina Agustina</h2>
+    <p><strong>Tanggal Lahir:</strong> 20 Agustus 2003</p>
+    <p><strong>Alamat:</strong>JL.Masjid Raden Anji Mak'ra,Desa Dasan Lekong, kec. Sukamulia, Kab. Lombok Timur</p>
+    <p><strong>Email:</strong> winaagustina20@gmail.com</p>
+    <p><strong>Telepon:</strong> +6287861349942</p>
+    <p><strong>Pendidikan:</strong> Mahasiswa Pendidikan Informatika, Universitas Hamzanwadi</p>
+    <p><strong>Hobi:</strong> Memasak, Membaca </p>
+  </div>
+
+  <!-- Bagian Video -->
+  <div class="video-section">
+    <h2>Video Perkenalan</h2>
+    <video controls style="width: 100%; max-width: 600px; border-radius: 10px;">
+      <source src="image/video4.mp4" type="video/mp4">
+      Browser Anda tidak mendukung pemutaran video.
+    </video>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const mobileMenu = document.querySelector('.mobile-menu');
+
+      menuBtn.addEventListener('click', function () {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('show');
+
+        // Tambahkan efek glow saat menu aktif
+        if (mobileMenu.classList.contains('show')) {
+          mobileMenu.style.boxShadow = '0 0 20px rgba(0, 242, 255, 0.5)';
+        } else {
+          mobileMenu.style.boxShadow = 'var(--neon-glow)';
+        }
+      });
+
+      // Tutup menu saat mengklik item
+      const menuItems = document.querySelectorAll('.mobile-menu a');
+      menuItems.forEach(item => {
+        item.addEventListener('click', function () {
+          menuBtn.classList.remove('active');
+          mobileMenu.classList.remove('show');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
